@@ -1,12 +1,16 @@
 const {readVarInt,writeVarInt} = require('./../data/varInt')
 const Packet = require('./../data/packet')
 const {PingRespone} = require('./../lib/status')
-const {Handshake} = require('./../lib/filter')
+const {Handshake,Acknowledg} = require('./../lib/filter')
+const {RegistryData} = require('./../lib/registrydata')
 
 const Packets = new Map(
     [
         [0,Handshake],
-        [1,PingRespone]
+        [1,PingRespone],
+        [3,Acknowledg],
+        [7,RegistryData],
+        [12,()=>{return ""}], // TickEnd
     ]
 )
 
