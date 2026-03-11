@@ -13,6 +13,8 @@ const game = {
             text: "Hello zexl!"
         }
     },
+    tab_list_header: "",
+    tab_list_footer: "",
     last_connection_id: -1,
     connections: new Map(),
     players: [],
