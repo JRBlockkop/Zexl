@@ -1,3 +1,5 @@
+const config = require('./../server/config')
+
 const game = {
     status: {
         version:{
@@ -10,7 +12,7 @@ const game = {
             sample:[]
         },
         description: {
-            text: "Hello zexl!"
+            text: config.motd
         }
     },
     tab_list_header: "",
@@ -18,7 +20,7 @@ const game = {
     last_connection_id: -1,
     connections: new Map(),
     players: [],
-    seed: 0,
+    seed: config.seed,
     world: null,
 }
 

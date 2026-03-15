@@ -1,0 +1,6 @@
+{
+    "port": 25565,
+    "host": "0.0.0.0",
+    "motd": "Hello zexl!",
+    "seed": 0
+}

@@ -1,8 +1,9 @@
 {
   "name": "zexl",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The Zexl Minecraft Server aims to implement core functional Minecraft Server entirely in Javascript",
   "scripts": {
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "test": "cd test && node zexl"
   }
 }

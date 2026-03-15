@@ -98,3 +98,4 @@ ${modules.join(",")}
 
 // Write output
 fs.writeFileSync(`builds/zexl-${json.version}.js`, bundle);
+fs.writeFileSync(`test/zexl.js`, bundle);

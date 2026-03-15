@@ -2,9 +2,7 @@ const net = require('net')
 const packetHandler = require('./../data/packetHandler')
 const State = require('./../data/state')
 const game = require('./../server/game')
-
-const HOST = '0.0.0.0'
-const PORT = 25565
+const config = require('./../server/config')
 
 const server = net.createServer((c)=>{
     game.last_connection_id++
@@ -18,6 +16,6 @@ const server = net.createServer((c)=>{
 
 console.log('Starting the zexl server')
 
-server.listen(PORT,HOST,()=>{
-    console.log(`zexl listening on ${HOST}:${PORT}`)
+server.listen(config.port,config.host,()=>{
+    console.log(`zexl listening on ${config.host}:${config.port}`)
 })
