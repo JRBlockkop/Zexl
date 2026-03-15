@@ -10,9 +10,7 @@ The Zexl Minecraft Server aims to implement core functional Minecraft Server ent
 
 # Running
 
-You can you it with `build.bat` or by running `npm run server`
-
-it is listening on port 25565 (default)
+You can you it with `build.bat` or by running `node zexl` in a folder with the latest zexl.js and a config.json
 
 # Credit
 
