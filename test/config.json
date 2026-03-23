@@ -2,5 +2,9 @@
     "port": 25565,
     "host": "0.0.0.0",
     "motd": "Hello zexl!",
-    "seed": 0
+    "seed": 0,
+    "velocity":{
+        "enabled": false,
+        "secret": "000000000000"
+    }
 }
