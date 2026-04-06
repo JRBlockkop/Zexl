@@ -1,7 +1,7 @@
 const {readVarInt,writeVarInt} = require('./../data/varInt')
 const Packet = require('./../data/packet')
 const {PingRespone} = require('./../lib/status')
-const {Handshake,Acknowledg} = require('./../lib/filter')
+const {Handshake,Acknowledg,PluginChannels} = require('./../lib/filter')
 const {ChatClientCommand,ChatClientMessage} = require('./../lib/chat')
 const {RegistryData} = require('./../lib/registrydata')
 
@@ -9,6 +9,7 @@ const Packets = new Map(
     [
         [0,Handshake],
         [1,PingRespone],
+        [2,PluginChannels],
         [3,Acknowledg],
         [6,ChatClientCommand],
         [7,RegistryData],
