@@ -7,7 +7,7 @@ const config = require('./../server/config')
 const server = net.createServer((c)=>{
     game.last_connection_id++
     const id = String(game.last_connection_id)
-    game.connections.set(id,new State())
+    game.connections.set(id,new State(c))
     c.on('data',d=>{
         packetHandler(c,d,id)
     })

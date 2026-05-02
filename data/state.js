@@ -1,6 +1,6 @@
 class State{
-    constructor(){
-        
+    constructor(c){
+        this.c = c;
     }
     ip=null
     uuid=null
