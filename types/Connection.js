@@ -12,7 +12,11 @@ class Connection{
         this.state = ConnectionState.Handshaking;
     }
     send(data){
-        this.c.write(data);
+        console.log(data)
+        this.c.write(Buffer.from(data,'hex'));
+    }
+    close(){
+        this.c.destroy();
     }
 }
 
