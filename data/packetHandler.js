@@ -8,6 +8,11 @@ const HandshakingPackets = {
     [clib.handshaking.Intention.id]: clib.handshaking.Intention,
 }
 
+const StatusPackets = {
+    [clib.status.StatusRequest.id]: clib.status.StatusRequest,
+    [clib.status.PingRequest.id]: clib.status.PingRequest,
+}
+
 function packetSlicer(hexstr){
     let list = []
     let idx=0
@@ -47,7 +52,7 @@ function packetHandler(con,d,id){
 
                     const [id,hex] = new slib.status.StatusResponse.c(JSON.stringify(JSONResponse)).toHex()
                     
-                    con.send(
+                    con.send(   
                         new Packet(
                             id,
                             hex
@@ -55,6 +60,22 @@ function packetHandler(con,d,id){
                     )
 
                     con.state = String(ConnectionState.Status);
+                }
+            }
+            if(ConnectionState.Status == con.state){
+                const data = StatusPackets[packet.id].f(packet.data);
+                if(packet.id == clib.status.PingRequest.id){
+
+                    const [id,hex] = new slib.status.PingResponse.c(data.Timestamp).toHex()
+
+                    console.log(id.hex)
+
+                    con.send(
+                        new Packet(
+                            id,
+                            hex
+                        ).toHex()
+                    )
                 }
             }
         } catch(e){con.close();console.log(e)}
